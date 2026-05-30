@@ -179,5 +179,11 @@ def testMetrics(actual, predictions):
         print("MAE:", mae, "MSE:", mse, "RMSE:", rmse, "MAPE:", mape, "R2:", r2)    
     else :
         print("Test case 5(Evaluation Metrics): Fail")
-
 testMetrics(actual, predictions)
+
+gruResult = pd.DataFrame({
+    "Actual": actual.flatten(),
+    "GRU": predictions.flatten()
+})
+
+gruResult.to_csv("gru_predictions.csv", index=False)

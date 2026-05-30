@@ -218,3 +218,10 @@ def testMetrics(mae,mse, rmse,mape,r2):
         print("Test case 5(Evaluation Metrics): Fail")
 
 testMetrics(mae, mse, rmse, mape, r2)
+
+lstmResult = pd.DataFrame({
+    "Actual": actualOriginal,
+    "LSTM": orignalPrediction
+})
+
+lstmResult.to_csv("lstm_predictions.csv", index=False)

@@ -196,3 +196,10 @@ testFeatureCreation(X, y)
 testPrediction(y_pred)
 testTraining(model)
 testMetrics(y_test, y_pred)
+
+rfResult = pd.DataFrame({
+    "Actual": y_test.values,
+    "Random Forest": y_pred
+})
+
+rfResult.to_csv("random_forest_predictions.csv", index=False)
